@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/><!--使之适用于移动端-->
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=HAzHptCjC1guVvxVXBeZ8dGTjBZ1GFY3"></script>
+    <title>MyMap</title>
+    <style type="text/css">  
+        html{height:100%}    
+        body{height:100%;margin:0px;padding:0px}    
+        #container{height:100%}    
+    </style> 
+</head>
+<body>
+    <div id="container" height="500px" width="500px"></div>
+
+
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map=new BMapGL.Map("container");//获得地图容器
+        var point=new BMapGL.Point(116.328854,39.959881)//设置地图中心点的经纬度
+        map.centerAndZoom(point,18);//设置地图缩放比例
+        //创建标记点
+        var marker=new BMap.Marker(point)
+        map.addOverlay(marker);//将标注添加到地图中
+    </script>
+</body>
+</html>
